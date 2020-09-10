@@ -24,11 +24,11 @@ La première étape de ce projet sera de prendre en main les données (brutes) d
 
 ## Traitement et visualisation des données
 
-Une deuxième étape serait de choisir et représenter des indicateurs statistiques qui influencent le nombre d'intervention et le temps de parole des personnages. En particulier,  vous devrez analyser les données textuelles de dialogues pour créer certains de ces indicateurs.
+Une deuxième étape serait de choisir et représenter des indicateurs statistiques qui influencent le nombre d'intervention et le temps de parole des personnages. En particulier, on devra analyser les données textuelles de dialogues pour créer certains de ces indicateurs.
 
 ## Choix de modèles
 
-A partir des données, vous choisirez une ou des méthodes d'apprentissage statistique, afin de répondre à la problématique du projet. En particulier, vous justifierez le choix des méthodes sélectionnées, et détaillerez la comparaison de ces méthodes.
+A partir des données, on choisira une ou des méthodes d'apprentissage statistique, afin de répondre à la problématique du projet. En particulier, on justifiera le choix des méthodes sélectionnées, et détaillera la comparaison de ces méthodes.
 
 ## Prédiction
 
