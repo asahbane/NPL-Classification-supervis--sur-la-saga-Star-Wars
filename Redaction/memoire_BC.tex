@@ -1,0 +1,252 @@
+\documentclass[12pt,a4paper,openany]{article}
+
+% utf8 permet de gérer les accents
+\usepackage[latin1, utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+%\usepackage{times}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{latexsym}
+\usepackage[all,line]{xy}
+\usepackage{yhmath}
+\usepackage{upgreek}
+
+\usepackage{graphics}
+\usepackage{framed}
+\usepackage{color,xcolor}
+\usepackage[pdftex,colorlinks=true,urlcolor=blue]{hyperref}
+
+\usepackage[Sonny]{fncychap}	% Lenny, Conny ,Bjarne, Rejne, Glenn, Sonny, Bjornstrup
+\usepackage{fancyhdr}
+\usepackage{fancybox}
+\usepackage{lastpage}
+
+\usepackage{tikz}
+
+\usepackage{pifont}
+\usepackage{pstricks}
+
+\usepackage{titlesec}
+
+\pagestyle{fancy}
+\lhead{}
+\chead{}
+\rhead{}
+\lfoot{}
+\cfoot{\thepage}
+\rfoot{}
+\renewcommand{\headrulewidth}{1,5pt}
+\renewcommand{\footrulewidth}{1,5pt}
+
+\usepackage{ntheorem}
+\theoremstyle{break}
+\newtheorem{thm}{ Théorème}[section]
+\newtheorem *{app}{ Application}[section]
+\newtheorem*{dem}{ Démonstration}[section]
+\newtheorem{df}{ Définition}[section]
+\newtheorem{rmq}{ Remarque}[section]
+\newtheorem{rmqs}{ Remarques}[section]
+\newtheorem *{prf}{ Preuve:}
+\newtheorem{prop}{ Proposition}[section]
+\newtheorem{exmp}{ Exemple}[section]
+\newtheorem{exmps}{ Exemples}[section]
+\newtheorem{lem}{ Lemme}[section]
+\newtheorem{cor}{ Corollaire}[section]
+\newtheorem{dfs}{Définitions}[section]
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+
+\usepackage[pdftex,colorlinks=true,urlcolor=blue]{hyperref}
+
+\usepackage{titletoc}
+\setcounter{secnumdepth}{4}%n = nombre de niveaux que comporte le numéro
+\setcounter{tocdepth}{4}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\K}{\mathbb{K}}
+
+\title{\scalebox{2}{Classification Star Wars}}
+
+\author{\shadowbox{\bf Sahbane Abdesstar, Yassin Sayd }}
+\date{\today}
+
+
+\usepackage[textwidth=1.5cm, textsize=scriptsize]{todonotes}
+%\usepackage[textwidth=2.8cm, textsize=scriptsize,disable]{todonotes}
+
+\newcommand{\BC}[1]{\todo[color=red!20]{\textbf{A changer:} #1}}
+\newcommand{\BCS}[1]{\textcolor{red}{#1}}
+
+\usepackage{vmargin}
+
+%---------------------------------------%
+%  MARGES DU DOCUMENT
+%---------------------------------------%
+\setmarginsrb{2.5cm}{1.5cm}{2.5cm}{2cm}{0.5cm}{0.75cm}{0.5cm}{1.05cm}
+% 1 est la marge gauche
+% 2 est la marge en haut
+% 3 est la marge droite
+% 4 est la marge en bas
+% 5 fixe la hauteur de l'entête
+% 6 distance entre entête et texte
+% 7 hauteur du pied de page
+% 8 distance entre texte et pied de page
+
+\usepackage{setspace}
+\onehalfspacing
+
+\begin{document}
+
+
+%\frontmatter
+\pagestyle{fancy}
+\maketitle
+
+
+\newpage
+\begin{tiny}
+$${\emph{\huge\bf REMERCIEMENT}\smallskip}$$
+\end{tiny}
+% ~ \\ ~ \\ ~ \\ ~ \\ ~ \\ ~ \\
+
+
+%\mainmatter
+\newpage
+\tableofcontents
+
+
+
+\newpage
+
+%\chapter{Introduction}
+\section{Introduction}
+
+%\begin{tiny}
+%$${\emph{\huge\bf INTRODUCTION}\smallskip}$$
+%\end{tiny}
+%~ \\ ~ \\ ~ \\
+%\hugebf{\\{\bfseries
+
+La saga Star Wars est constituée de 3 trilogies, qui font intervenir de nombreux personnages, que l'on peut distinguer selon leur espèce, leur genre, ou encore leur appartenance à un groupe. La 1 ère trilogie est constituée des épisodes 4, 5 et 6 tandis que la 2 ème trilogie est constituée des épisodes 1, 2 et 3, qui racontent des événements antérieurs à la 1 ère trilogie. Après l'achat des droits d'auteur de Star Wars par Walt Disney Company en 2012, le 7 ème épisode est sorti en 2015, et est donc le premier épisode de la 3 ème trilogie. Pour chacun de ces 7 épisodes, nous avons pour données les dialogues sous forme de scripts complets, c'est-à-dire composés de dialogues et de didascalies \BCS{et des caractéristiques concernant les personnages présents.} \BC{Les caractéristiques sont dans le script ?}
+Notre base de données contient un fichier par film, pour apporter plus d'informations au lecteur car ces fichiers sont différents des films et contiennent naturellement plus de détails afin de donner au lecteur l'intégralité des éléments nécessaires dont il a besoin afin d'avoir une idée globale sur le déroulement de l'histoire.\BC{Vous voulez dire quoi ?}
+
+
+L'objectif de ce travail est de mettre en évidence les principaux indicateurs (\BCS{âge} , genre, champs lexicaux utilisés) qui influencent le nombre d'intervention et le temps de parole des personnages . Pour ce faire, nous créons une matrice de design des 6 premiers épisodes (afin de faire la prédiction sur le 7ème épisode) dont les colonnes sont : \BCS{les noms de personnages}, les paroles prononcées par chaque personnage, \BCS{le nombre de paroles prononcées par chaque personnage,}  le pourcentage de paroles prononcées par chaque personnage, \BCS{le nombre de mots prononcés par chaque personnage,} le pourcentage de mots prononcés par chaque personnage, le genre de chaque personnage et le nombre de fois où chaque personnage a prononcé les 5 mots les plus prononcés. \BC{en rouge : pas utilisé dans la matrice donc enlevez-le}
+
+
+On pourra en déduire si la répartition du temps de parole est équilibré ou pas. Pour cela, on s'est basé sur le nombre de mots prononcés par chaque personnage, cela signifie qu'un nombre de mots plus élevé correspond à un temps de parole plus long.
+Enfin, on essayera de répondre à la question suivante : d'après l'analyse des données (c'est-à-dire les données textuelles des 6 premiers épisodes), aurait-on pu prédire que le personnage principal de la dernière trilogie aurait été une femme ? Dans cette optique, on a importé les données brutes et fait le pré-traitement de ces données afin d'avoir une matrice de design sur laquelle on peut appliquer notre modèle. Ensuite on a procédé au traitement et à la visualisation des données en analysant les données textuelles de dialogues pour créer des indicateurs statistiques qui influencent le nombre d'intervention et le temps de parole des personnages. \BCS{Afin de répondre à la problématique du projet, on a choisi un modèle grâce au choix d'une méthode d'apprentissage statistique} \BC{Reformulez s'il vous plait}. De ce fait, la dernière étape de ce projet consiste à appliquer le modèle choisi afin de prédire si le personnage principal de la dernière trilogie aurait été une femme.
+%}}
+\newpage
+
+\section{Pré-traitemment des données}
+
+Dans ce chapitre, nous allons procéder au pré-traitemment des données. Nous disposons d'un jeu de données sous forme de texte (les scripts de la saga), nous allons donc transformer ce jeu de données en données \BCS{ exploitables automatiquement} \BC{definissez "exploitables automatiquement" ici}.
+
+\subsection{Importation des données }
+
+
+Afin d'avoir une idée plus claire sur les données brutes qu'on a eu initialement comme base de données, on se permet de mettre un petit extrait de l'épisode 4, dans la Figure \ref{fig:episode4} :\\
+
+
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.8]{capture1.PNG}  \\
+\caption{Extrait du script de l'épisode 4 de la saga Star Wars.}
+\label{fig:episode4}
+\end{figure}
+
+
+Ces données ne contiennent pas seulement les noms des personnages et leurs dialogues mais aussi des didascalies et des descriptions par rapport au décor, au lieu, au temps et aux caractéristiques des personnages. Elles n'étaient donc pas automatiquement exploitables. Notre base de de données n'est pas un dataframe, c'est-à-dire qu'elle n'est pas structurée comme une matrice dont les lignes correspondent aux individus et les colonnes aux différentes variables. \BCS{On rappelle que les coefficients de cette matrice sont sous forme de chaines de caractères, cela signifie qu'ils peuvent être des nombres ou du texte.} \BC{Vous dites précédemment que ce n'est pas une matrice}
+\\
+
+
+La première étape de ce projet sera de prendre en main les données (brutes) des scripts de la saga, et d'opérer les premiers traitements permettant de les transformer en données exploitables automatiquement.\\
+Les 7 fichiers de films qu'on a étudiés ont tous le format \BCS{CSV} \BC{les fichiers raws sont des fichiers .txt mais les données clean sont des fichiers CSV, des quels parlez vous ?}, c'est-à-dire un format de texte simple qui est utilisé dans de nombreux contextes lorsque de grandes quantités de données doivent être fusionnées sans être directement connectées les unes aux autres.  \BC{pourquoi parlez vous de cela ?}
+Cependant il y a quelques différences entre les fichiers de films au niveau de la structure du texte. On a fait le pré-traitement uniquement sur l'épisode 4 pour ensuite appliquer les fonctions utilisées, lors de cette étape, sur les autres épisodes. On s'intéresse uniquement aux personnages et à leurs dialogues, donc on a d'abord fait le tri afin d'obtenir des données structurées faciles à exploiter, c'est-à-dire sous forme d'un dataframe auquel on peut appliquer une méthode d'apprentissage statistique.
+Afin de vous expliquer notre démarche, nous avons pris un petit extrait de l'épisode 4. \\
+
+\includegraphics[scale=0.6]{capture2.PNG}  \\
+\BC{figure, centering, titre, label, comme dans la figure 1.}
+
+\BCS{À partir de ces scripts complets, on souhaite extraire dans un premier temps uniquement les noms de personnages et les dialogues. Dans un deuxième temps, on séparera ensuite les personnages de leur dialogues, pour former une matrice à deux colonnes. Pour ce faire, on va créer ce qu'on appelera un motif (pattern) qui nous permet de faire une recherche d'expression régulière, ce motif permet d'extraire la suite des couples : (noms de personnages, dialogues prononcées). }
+%Notre premier objectif est de garder uniquement les noms de personnages et leurs dialogues.
+On a tout d'abord constaté que le texte n'est pas aligné de la même façon, ainsi  les discours des personnages sont indentés de 25 espaces suivis d'un espace.
+Afin de faire le tri grâce à ce critère, on a utilisé \texttt{Python} comme langage informatique.
+Dans un premier temps, on a téléchargé le \texttt{package re} (regular expression) qui est utilisé pour manipuler des chaines de caractères.
+Ce package nous donne accès à la fonction \texttt{re.compiler }qui permet de faire la compilation des chaines de caractères.
+Les expressions régulières sont compilées en objets motifs, qui contiennent différentes fonctions pour effectuer différentes tâches qui peuvent inclure la recherche, la correspondance, le remplacement ou les substitutions dans les chaines.
+Cette fonction prend pour entrée des groupes de chaines de caractères.
+On a ainsi défini 3 groupes dans la fonction \texttt{re.compiler} pour créer un motif régulier. Le 1er groupe correspond à 25 espaces (qui précèdent les discours des personnages), le 2 ème groupe correspond à un ensemble de mots et/ou de chiffres quelconque et le 3 ème groupe correspond à un seul espace (qui suit les discours des personnages).
+On a ensuite utilisé la fonction \texttt{finditer} du package \texttt{re} afin de récupérer uniquement le 2 ème groupe qui correspond à toute phrase précédée par 25 espaces et suivie par un espace, à savoir les noms de personnages et leurs dialogues.
+On rappelle que la fonction \texttt{finditer} est utilisée pour trouver \BCS{le motif \texttt{re}} \BC{à reformuler, c'est le motif défini par la classe re ?} dans les chaines de caractères ainsi que l'emplacement des chaines de caractères correspondantes qui est l'index des chaines de caractères.
+Cette fonction \texttt{itère} en fait les chaines correspondantes et retourne les index ou les emplacements de la chaine.
+Ainsi on récupère uniquement les noms de personnages et leurs dialogues. On obtient un résultat de cette forme-là :\\
+
+\includegraphics[scale=0.3]{capture3.PNG}  \\
+\BC{figure, centrering, titre, label, comme dans la figure 1.}
+
+On a remarqué que le nom \BCS{de personnage} 'BEN' est caractérisé par le fait qu'il est précédé par 14 espaces, (d'ailleurs c'est le cas pour tous les noms de personnages), on a donc utilisé le même concept que précédemment afin de séparer les noms de personnages de leurs dialogues, cela veut dire qu'on a créé une expression régulière pour récupérer les noms de personnages grâce aux fonctions \texttt{re.compiler} et \texttt{finditer}. On a ensuite listé les noms de personnages dans une liste. Tous les éléments qui ne sont pas dans cette liste correspondent aux dialogues des personnages, ainsi on a récupéré les dialogues en utilisant la fonction \texttt{join} qui permet la concaténation des chaines de caractères dans une liste. On rappelle que le pré-traitement des données est appliqué initialement uniquement sur l'épisode 4.
+Pour cela, on a créé une fonction, \BCS{que l'on a appelée « magic »} \BC{n'appelée pas votre fonction magic, soit vous la renommé, soit vous ne donnez pas son nom.}, qui permet de faire ces manipulations. Ainsi on a obtenu un dataframe qui contient les noms de personnages sur la 1 ère colonne et leurs dialogues respectifs sur la 2 ème colonne, \BCS{comme on peut le voir dans l'exemple Figure \ref{fig:exemple_dataframe}} \BC{On veut voir les exemples comme cela}. Cette fonction va par la suite être appliquée aux autres fichiers films correspondant aux films 1,2,3,5 et 6 en modifiant les paramètres permettant d'identifier les noms de personnages et leurs dialogues pour chaque fichier. \BCS{On tient à préciser que les personnages n'apparaissent pas une seule fois selon leurs dialogues et que les dialogues des personnages dans le dataframe contiennent des mots de niveaux d'importance différents (vis-à-vis de l'histoire) ainsi que de la ponctuation.} \BC{Que voulez vous dire ?} \\
+
+Afin de manipuler des dataframes, on a utilisé la librairie \texttt{Pandas} qui fait partie des librairies de base pour la \BCS{data science} \BC{pas de terminologie anglaise} en Python. \texttt{Pandas} fournit des structures de données puissantes et simples à utiliser, ainsi que les moyens d'opérer rapidement des opérations sur ces structures. Elle permet d'importer des données dans un dataframe, modifier ce dataframe afin de pouvoir le visualiser et en retirer de la valeur. \texttt{Pandas} a permis de résoudre certaines difficultés rencontrées lors de l'utilisation de \texttt{Numpy}, par exemple le chargement à partir d'un fichier CSV exigeait que le contenu de chaque colonne soit une chaine de caractères et cela posait problème quand il y avait une colonne contenant des données numériques. Il s'agit d'un outil très pratique pour visualiser et analyser les données d'un dataframe. \\
+
+Afin d'avoir une idée plus claire du dataframe obtenu pour l'épisode 4, \BCS{on se permet de le joindre ci-dessous} \BC{reformulez : on joint ci-dessous un extrait ...}, il s'agit d'un tableau composé de 1002 lignes et 2 colonnes :\\
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[scale=0.8]{capture4.PNG}  \\
+    \caption{Trouver un nom à cette figure}
+    \label{fig:exemple_dataframe}
+    \end{figure}
+
+\subsection{Nettoyage de données}
+
+Jusqu'à présent, nous avons importé les données brute dans une dataframe à deux colonnes, où la première colonnes comporte les prénoms de chaque personnage, et la deuxième comporte le discours du personnage (chaine de caractères). Dans cette partie, nous allons nettoyer le discours de chaque personnage. Dans une première partie, nous allons commencer par enlever tout les mots vides ("stop words" en anglais), i-e les mots qui ne possède pas de valeur informative (comme les mots : "you", "I", "and"...). Dans une deuxième partie, nous allons procéder à la\texttt{ lemmatisation} des mots.
+
+\subsubsection{Le package Nltk}
+
+
+Le package \texttt{Nltk} (Natural Language Toolkit) est un package python qui permet le travail avec les données du language humain. Nous allons utiliser ce package afin de nettoyer nos données.
+
+
+\subsubsection{Tokenisation}
+Dans cette partie, nous allons, pour chaque discours de chaque personnage, diviser le discours en mots, afin d'enlever tout les mots vides. Nous allons commencer par diviser notre chaine de caractère grâce à la fonction \texttt{RegexpTokenizer()}, cette fonction permet de diviser une chaine de caractère en utilisant une expression régulière, elle prend en entrée l'expression régulière (chaine de caractère), et permet d'appliquer sa méthode \texttt{tokenize()} sur une chaine de caractère afin de récupérer tout les morceaux de cette chaine ayant la même structure que l'expression régulière. Le package \texttt{Nltk} fournit aussi une liste de mots vides qu'on peut récupérer en fonction de la langue souhaitée, et que nous allons utiliser pour enlever les mots vides de nos données.\\
+
+La procédure est donc simple, pour chaque discours de chaque personnage, nous commençons par appliquer la fonction \texttt{RegexpTokenizer()} afin de récupérer tout morceaux du discours composé d'alphanumériques (ceci nous permettra de négliger les signes de ponctuation), après nous allons, par une boucle, itérer à travers ces morceaux, afin de ne garder que ceux qui ne figure pas dans la liste des mots vides donnée par le package \texttt{Nltk}.
+
+\subsubsection{Exemple}
+
+Afin de mettre en évidence ce que nous avons couvert dans la partie précédente, nous allons montrer dans un exemple comment nous pouvons enlever les mots vide d'une phrase. Nous allons appliquer les étapes que nous avons discuter dans la partie précédente sur une chaine de caractère que nous avons extrait de nos données :\\
+
+\includegraphics[scale=0.55]{capture5.PNG}  \\
+\BC{Idem que pour la figure 1; attention à la dimension des images}
+
+Nous pouvons donc voir que nous obtenons une liste de chaines de caractères composées juste des mots (alphanumériques), les signes de ponctuation ne sont pas prises en comptes. Nous allons maintenant enlever les mots vides :\\
+
+\includegraphics[scale=0.595]{capture6.PNG}  \\
+
+Nous pouvons donc voir que nous avons enlevé tout les mots vides ("you", "they"...).
+
+
+\subsubsection{Lemmatisation}
+
+Nous allons finaliser le nettoyage des données par la \texttt{lemmatisation} des mots. En fait, lors du traitement du vocabulaire, nous rencontrons souvent dans nos base de données, des mots ayant le même sens, mais qui s'écrivent différemment car ils sont aux formes conjuguées ou accordées (par exemple : "jouer" et "jouera"). Ceci peut avoir un impact négatif sur le traitement du vocabulaire, par exemple, en comptant le nombre de fois chaque mot apparait, si deux mots ayant le même sens apparaissent 50 fois chacun, alors ils vaut mieux considérer que l'un de ces deux mot apparait 100 fois.
+Pour résoudre ce problème, nous allons utiliser la fonction \texttt{WordNetLemmatizer()} fournie par le module \texttt{nltk.stem} du package \texttt{Nltk}. Cette fonction nous permettra d'appliquer la méthode \texttt{lemmatize} sur un mot (une chaine de caractères), ce qui permet d'obtenir le "lemme" de ce mot : la version non conjuguée et non accordée du mot.
+
+%\end{end}
+
+
+
+
+%\newpage
+%\begin{thebibliography}{}
+%\end{thebibliography}
+
+
+\end{document}
