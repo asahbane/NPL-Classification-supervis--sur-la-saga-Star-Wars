@@ -1,38 +1,15 @@
-## Compte GitHub pour le travail collaboratif :
-
-Pour bien commencer ce projet, envoyez nous vos identifiants aux deux adresses suivantes :
-
-tiffany.cherchi@umontpellier.fr et florent.bascou@umontpellier.fr
-
-Nous vous donnerons alors accès aux données ainsi qu'aux supports utiles au projet, disponibles ici :
-
-https://github.com/tiffanycherchi/Project_2020_BC
-
-
-## Application GitHub Desktop :
-
-Maintenant, et sauf si vous êtes sous linux, téléchargez l'application :
-
-https://desktop.github.com
-
-Elle vous permettra de gérer vos fichiers via Git, et de régulièrement "pousser" toutes vos avancées.
-
-L'objectif pour nous n'est absolument pas de contrôler tout votre travail, mais plutôt de vous aider à prendre de 'bonnes pratiques'.
-Le fait de pousser régulièrement vous aidera à voir le travail avancer.
-
-
-## Anaconda :
-
-Si vous ne l'avez pas encore fait, téléchargez la distribution Anaconda :
-
-https://www.anaconda.com/distribution/
-
-Vous en aurez besoin pour traiter des documents de type notebook (.ipynb) ou python (.py).
-
-Passons au travail !
-
-
 # Classification de personnages dans la trilogie originale Star Wars
+Ce projet est réalisé par : 
+_[SAHBANE Abdesstar](https://github.com/asahbane)
+_[SAYD Yassine](https://github.com/saydyassine)
+
+Sous la direction des docteurs:
+_[CHERCHI tiffany](https://github.com/tiffanycherchi)
+_[BASCOU florent](https://github.com/BascouFlorent)
+
+
+
+## Introduction
 
 La saga Star Wars est constituée de 3 trilogies, qui font intervenir de nombreux personnages, que l'on peut distinguer selon leur espèce, leur genre, ou encore leur appartenance à un groupe. Pour chacun des trois épisodes de la trilogie originale, vous aurez pour données les dialogues ainsi que des caractéristiques concernant les personnages présents.
 
