@@ -1,11 +1,12 @@
 # Classification de personnages dans la trilogie originale Star Wars
-Ce projet est réalisé par : 
-_[SAHBANE Abdesstar](https://github.com/asahbane)
-_[SAYD Yassine](https://github.com/saydyassine)
+Ce projet est réalisé par :    
+_[SAHBANE Abdesstar](https://github.com/asahbane)   
+_[SAYD Yassine](https://github.com/saydyassine)   
 
-Sous la direction des docteurs:
-_[CHERCHI tiffany](https://github.com/tiffanycherchi)
-_[BASCOU florent](https://github.com/BascouFlorent)
+Sous la direction des docteurs:    
+_[CHERCHI tiffany](https://github.com/tiffanycherchi)    
+_[BASCOU florent](https://github.com/BascouFlorent)    
+
 
 
 
